@@ -1,57 +1,71 @@
-name: Bug Report
-description: File a bug report
-title: "[Bug]: "
-labels: ["bug", "triage"]
-assignees:
-  - octocat
+name: Issue - Bug Report
+description: New bug repor
 body:
   - type: markdown
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: input
-    id: contact
+
+  - type: dropdown
+    id: versioncore
     attributes:
-      label: Contact Details
-      description: How can we get in touch with you if we need more info?
-      placeholder: ex. email@example.com
+      label: Version Pi-hole (Core)
+      options:
+        - v5.9.1
+        - v5.9
+        - v5.8.1
+        - v5.8
+        - v5.7
+        - v5.6
+        - Other
+  - type: dropdown
+    id: versionweb
+    attributes:
+      label: Version Web (AdminLTE)
+      options:
+        - v5.11.1
+        - v5.11
+        - v5.10.1
+        - v5.10
+        - v5.9
+        - v5.9
+        - Other
+  - type: dropdown
+    id: versionftl
+    attributes:
+      label: Version FTL
+      options:
+        - v5.14.1
+        - v5.14
+        - v5.13
+        - v5.12.1
+        - v5.12
+        - v5.11
+        - Other
+    validations:
+      required: true
+  - type: checkboxes
+    id: hasdocker
+    attributes:
+      label: Docker
+      options:
+        - label: I'm using a docker installation
+          required: true
+  - type: input
+    id: dockerversion
+    attributes:
+      label: Docker Version
+      placeholder: "Docker vesion if used (optional)"
     validations:
       required: false
   - type: textarea
-    id: what-happened
+    id: bug-description
     attributes:
-      label: What happened?
-      description: Also tell us, what did you expect to happen?
-      placeholder: Tell us what you see!
-      value: "A bug happened!"
+      label: Details
+      description: Describe what you see. Try to detail your steps to reproduce the bug.
+      placeholder: Bug Description
     validations:
       required: true
-  - type: dropdown
-    id: version
-    attributes:
-      label: Version
-      description: What version of our software are you running?
-      options:
-        - 1.0.2 (Default)
-        - 1.0.3 (Edge)
-    validations:
-      required: true
-  - type: dropdown
-    id: browsers
-    attributes:
-      label: What browsers are you seeing the problem on?
-      multiple: true
-      options:
-        - Firefox
-        - Chrome
-        - Safari
-        - Microsoft Edge
-  - type: textarea
-    id: logs
-    attributes:
-      label: Relevant log output
-      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
-      render: shell
   - type: checkboxes
     id: terms
     attributes:
