@@ -8,7 +8,7 @@ body:
         Thanks for taking the time to fill out this bug report!
 
   - type: dropdown
-    id: coreversion
+    id: core-ver
     attributes:
       label: Version Pi-hole (Core)
       options:
@@ -20,7 +20,7 @@ body:
         - v5.6
         - Other
   - type: dropdown
-    id: webversion
+    id: web-ver
     attributes:
       label: Version Web (AdminLTE)
       options:
@@ -32,7 +32,7 @@ body:
         - v5.9
         - Other
   - type: dropdown
-    id: ftlversion
+    id: ftl-ver
     attributes:
       label: Version FTL
       options:
@@ -46,14 +46,14 @@ body:
     validations:
       required: true
   - type: checkboxes
-    id: hasdocker
+    id: has-docker
     attributes:
       label: Docker
       options:
         - label: I'm using a docker installation
           required: true
   - type: input
-    id: dockerversion
+    id: docker-ver
     attributes:
       label: Docker Version
       placeholder: "Docker vesion if used (optional)"
