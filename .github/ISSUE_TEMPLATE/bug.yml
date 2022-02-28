@@ -6,42 +6,22 @@ body:
     attributes:
       value: |
         Thanks for taking the time to fill out this bug report!
-  - type: dropdown
+  - type: input
     id: core-ver
     attributes:
-      label: Version Pi-hole (Core)
-      options:
-        - v5.9.1
-        - v5.9
-        - v5.8.1
-        - v5.8
-        - v5.7
-        - v5.6
-        - Other
-  - type: dropdown
+      label: Pi-hole Version (Core)
+    validations:
+      required: true
+  - type: input
     id: web-ver
     attributes:
-      label: Version Web (AdminLTE)
-      options:
-        - v5.11.1
-        - v5.11
-        - v5.10.1
-        - v5.10
-        - v5.9
-        - v5.9
-        - Other
-  - type: dropdown
+      label: Web Version (AdminLTE)
+    validations:
+      required: true
+  - type: input
     id: ftl-ver
     attributes:
-      label: Version FTL
-      options:
-        - v5.14.1
-        - v5.14
-        - v5.13
-        - v5.12.1
-        - v5.12
-        - v5.11
-        - Other
+      label: FTL Version
     validations:
       required: true
   - type: checkboxes
